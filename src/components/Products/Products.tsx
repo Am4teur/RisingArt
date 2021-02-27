@@ -15,7 +15,6 @@ const Products = ({products, addToCart}:productsProps) => {
 
   return (
     <main className={classes.content}>
-      <div className={classes.toolbar}/>
       <Grid container justify="center" spacing={4}>
         {
           products.map((product) => (

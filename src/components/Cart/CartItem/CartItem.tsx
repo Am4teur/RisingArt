@@ -6,9 +6,11 @@ import useStyles from './styles';
 
 interface cartItemProps {
   item: any;
+  updateCartQuantity: (productId: string, quantity:number) => void;
+  removeItemFromCart: (productId: string) => void;
 }
 
-const CartItem = ({item}:cartItemProps) => {
+const CartItem = ({item, updateCartQuantity, removeItemFromCart}:cartItemProps) => {
   const classes = useStyles();
 
   return (
@@ -20,11 +22,11 @@ const CartItem = ({item}:cartItemProps) => {
       </CardContent>
       <CardActions className={classes.cardActions}>
         <div className={classes.buttons}>
-          <Button type="button" size="small">-</Button>
+          <Button type="button" size="small" onClick={() => updateCartQuantity(item.id, item.quantity-1)}>-</Button>
           <Typography>{item.quantity}</Typography>
-          <Button type="button" size="small">+</Button>
+          <Button type="button" size="small" onClick={() => updateCartQuantity(item.id, item.quantity+1)}>+</Button>
         </div>
-        <Button variant="contained" type="button" color="secondary">Remove</Button>
+        <Button variant="contained" type="button" color="secondary" onClick={() => removeItemFromCart(item.id)}>Remove</Button>
       </CardActions>
     </Card>
   );
