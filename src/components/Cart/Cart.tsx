@@ -48,8 +48,8 @@ const Cart = ({cart, updateCartQuantity, removeItemFromCart, emptyCart}:cartProp
 
   return (
     <Container>
-      <Typography className={classes.title} variant="h3" gutterBottom>Your Shopping Cart</Typography>
-      <Typography className={classes.title} variant="h3" gutterBottom>TODO, you have X items on the your cart</Typography>
+      <Typography className={classes.title} variant="h3">Your Shopping Cart</Typography>
+      <Typography className={classes.title} variant="h5" gutterBottom>You have {cart.total_items} items on the your cart</Typography>
       { !cart.line_items.length ? <EmptyCart /> : <FilledCart /> }
     </Container>
   )
