@@ -6,10 +6,9 @@ import { useFormContext, Controller } from 'react-hook-form';
 interface formInputProps {
   name: string;
   label: string;
-  value: string;
 }
 
-const FormInput = ({ name, label, value }:formInputProps) => {
+const FormInput = ({ name, label }:formInputProps) => {
   const { control } = useFormContext();
 
   return (
@@ -21,7 +20,7 @@ const FormInput = ({ name, label, value }:formInputProps) => {
         name={name}
         label={label}
         required
-        defaultValue={value}
+        defaultValue=""
       />
     </Grid>
   )
