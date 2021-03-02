@@ -1,10 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
+const spacing = 8;
 
 export default makeStyles((theme) => ({
-  toolbar: theme.mixins.toolbar,
   title: {
-    marginTop: '5%',
+    marginTop: spacing * 2,
   },
   emptyButton: {
     minWidth: '150px',
@@ -18,12 +18,9 @@ export default makeStyles((theme) => ({
   checkoutButton: {
     minWidth: '150px',
   },
-  link: {
-    textDecoration: 'none',
-  },
   cardDetails: {
     display: 'flex',
-    marginTop: '10%',
+    marginTop: spacing * 4,
     width: '100%',
     justifyContent: 'space-between',
   },

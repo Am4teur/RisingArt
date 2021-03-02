@@ -6,12 +6,11 @@ import { useFormContext, Controller } from 'react-hook-form';
 interface formInputProps {
   name: string;
   label: string;
-  required: boolean;
+  value: string;
 }
 
-const FormInput = ({ name, label, required }:formInputProps) => {
+const FormInput = ({ name, label, value }:formInputProps) => {
   const { control } = useFormContext();
-  const isError = false;
 
   return (
     <Grid item xs={12} sm={6}>
@@ -21,7 +20,8 @@ const FormInput = ({ name, label, required }:formInputProps) => {
         fullWidth
         name={name}
         label={label}
-        required={required}
+        required
+        defaultValue={value}
       />
     </Grid>
   )
