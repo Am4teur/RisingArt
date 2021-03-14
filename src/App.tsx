@@ -69,7 +69,6 @@ const App = () => {
       refreshCart();
     } catch (error) {
       console.log("Error on handleCaptureCheckout: " + error);
-
       setErrorMsg(error.data.error.message);
     }
   };
@@ -93,6 +92,7 @@ const App = () => {
                   updateCartQuantity={updateCartQuantity}
                   removeItemFromCart={removeItemFromCart}
                   emptyCart={emptyCart}
+                  prods={products}
             />
           </Route>
           <Route exact path="/checkout">
